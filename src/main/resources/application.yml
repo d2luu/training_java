@@ -1,0 +1,12 @@
+spring:
+ application:
+   name: training_luu
+ datasource:
+   url: jdbc:mysql://localhost:3306/mydb?useSSL=false
+   username: root
+   password: luumanh94
+ thymeleaf:
+   cache: false 
+
+server:
+ port: 8080
