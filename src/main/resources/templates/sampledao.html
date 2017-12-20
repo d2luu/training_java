@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>JavaProject Sample</title>
+</head>
+<body>
+<p th:text="${msg}">ここにメッセージが入ります</p>
+<table>
+<tr>
+	<td>Id</td>
+	<td>Name</td>
+</tr>
+<tr th:each="v:${views.sampleList}">
+	<td th:text="${v.sampleId}">sample_id</td>
+	<td th:text="${v.sampleName}">sample_name</td>
+</tr>
+</table>
+<br/>
+</body>
+</html>

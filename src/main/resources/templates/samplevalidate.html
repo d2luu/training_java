@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>JavaProject Validate Sample</title>
+</head>
+<body>
+<p th:text="${msg}">ここにメッセージが入ります</p>
+<form th:action="@{/validate}" th:object="${sampleForm}" method="post">
+	ID:<input type="text" id="sampleId" name="sampleId" th:field="*{sampleId}" value="12345"/>
+	<span th:if="${#fields.hasErrors('sampleId')}" th:errors="*{sampleId}">error!</span>
+
+	<br/><br/>
+	
+	名前:<input type="text" id="sampleName" name="sampleName" th:field="*{sampleName}" value="なまえ"/>
+	<span th:if="${#fields.hasErrors('sampleName')}" th:errors="*{sampleName}">error!</span>
+	
+	<br/><br/>
+	
+	<input type="submit" value="エラーメッセージを表示する"/>
+</form>
+</body>
+</html>
